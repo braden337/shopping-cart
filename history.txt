@@ -1,0 +1,53 @@
+history | head -100 > history.txt
+yarn build; and yarn deploy
+git push
+git commit
+git add .
+git branch -D cart-toast
+git merge cart-toast
+git checkout master
+git commit
+git add .
+git checkout -b cart-toast
+git branch -D colour-change
+git merge colour-change
+git checkout master
+git commit
+git add .
+git checkout -b colour-change
+git branch -D gh-pages
+git merge gh-pages
+git checkout master
+git commit
+git add .
+yarn add -D gh-pages
+git checkout -b gh-pages
+git branch -D fixCart
+git merge fixCart
+git checkout master
+git commit
+git add .
+git checkout -b fixCart
+git commit
+git add .
+git branch -D gulp
+git merge gulp
+git checkout master
+git commit
+git add .
+yarn add -D gulp del gulp-concat gulp-sourcemaps gulp-uglify-es gulp-cssnano gulp-imagemin
+yarn init
+git checkout -b gulp
+git commit
+git add .
+git mv index.html src
+git mv css src
+git mv images src
+git mv js src
+git push -u origin master
+git commit
+git add .
+git commit
+git add .
+git remote add origin git@github.com:braden337/shopping-cart.git
+git init
