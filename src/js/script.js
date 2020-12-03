@@ -14,6 +14,7 @@ class Cart {
       this.courses.push(course);
       this.updateCart();
       updateCourses();
+      toast(course.title);
     }
   }
 
@@ -103,3 +104,15 @@ cartList.addEventListener('click', function (event) {
   cart.removeCourse(itemNumber);
 });
 updateCourses();
+
+function toast(title) {
+  Swal.fire({
+    titleText: title,
+    text: 'was added to your cart',
+    toast: true,
+    position: 'bottom-end',
+    timer: 3000,
+    timerProgressBar: true,
+    showConfirmButton: false,
+  });
+}
