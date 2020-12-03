@@ -94,8 +94,11 @@ function updateCourses() {
 let cart = new Cart();
 let ul = document.querySelector('ul.courses');
 ul.addEventListener('click', function (event) {
-  let id = event.target.closest('li').dataset.courseId;
-  cart.addCourse(id);
+  let button = event.target;
+  if (button.nodeName === 'BUTTON') {
+    let id = button.closest('li').dataset.courseId;
+    cart.addCourse(id);
+  }
 });
 let cartList = document.querySelector('#cart ul');
 cartList.addEventListener('click', function (event) {
