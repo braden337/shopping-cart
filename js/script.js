@@ -37,12 +37,14 @@ class Cart {
 
   updateCart() {
     let ul = document.querySelector('#cart ul');
-    ul.innerHTML = "";
+    ul.innerHTML = '';
     let summary = ul.previousElementSibling;
     summary.innerHTML = `You have ${this.courses.length} Items in your cart.`;
     let subTotal = ul.nextElementSibling.querySelector('#subtotal-amount');
     subTotal.innerHTML = `$${this.subTotal()}`;
-    let total = subTotal.parentElement.nextElementSibling.querySelector('#total-amount');
+    let total = subTotal.parentElement.nextElementSibling.querySelector(
+      '#total-amount'
+    );
     total.innerHTML = `$${this.total()}`;
     this.courses.forEach((course, index) => {
       ul.innerHTML += `<li data-item-no="${index}"
@@ -53,15 +55,17 @@ class Cart {
     <div id="delete">
       <i class="far fa-times-circle"></i>
     </div>
-    </li>`
+    </li>`;
     });
   }
-};
+}
 
 function updateCourses() {
-  coursesEle.innerHTML = "";
+  coursesEle.innerHTML = '';
   courses.forEach(function (course) {
-    coursesEle.insertAdjacentHTML('afterbegin', `
+    coursesEle.insertAdjacentHTML(
+      'afterbegin',
+      `
       <li data-course-id="${course.id}">
         <img src="images/${course.image}">
         <div class="info">
@@ -80,19 +84,20 @@ function updateCourses() {
           <button id="add-to-cart">Add To Cart</button>
           <div id="spaces-remaining"><span>${course.availableSpaces}</span> spaces remaining</div>
         </div>
-      </li>`);
+      </li>`
+    );
   });
 }
 
 let cart = new Cart();
 let ul = document.querySelector('ul.courses');
 ul.addEventListener('click', function (event) {
-  let id = event.target.closest("li").dataset.courseId;
+  let id = event.target.closest('li').dataset.courseId;
   cart.addCourse(id);
 });
 let cartList = document.querySelector('#cart ul');
 cartList.addEventListener('click', function (event) {
-  let li = event.target.closest("li");
+  let li = event.target.closest('li');
   let itemNumber = li.dataset.itemNo;
   cart.removeCourse(itemNumber);
 });
