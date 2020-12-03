@@ -1,0 +1,17 @@
+body {
+  background-color: #daffed;
+}
+
+nav {
+  background-color: #473198;
+}
+
+#add-to-cart {
+  background-color: #c33149;
+}
+
+#add-to-cart:hover {
+  color: #c33149;
+  background-color: white;
+  border: 2px solid #c33149;
+}

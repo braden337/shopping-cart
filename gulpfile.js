@@ -12,7 +12,7 @@ gulp.task('copy', () => gulp.src('src/index.html').pipe(gulp.dest('dist')));
 
 gulp.task('css', () =>
   gulp
-    .src(['src/css/normalize.css', 'src/css/style.css'])
+    .src(['src/css/normalize.css', 'src/css/style.css', 'src/css/colours.css'])
     .pipe(concat('style.css'))
     .pipe(sourcemaps.init())
     .pipe(cssnano())
